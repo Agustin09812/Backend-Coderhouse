@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "title": "producto de prueba 1",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "abc123",
+    "stock": 25
+  },
+  {
+    "id": 2,
+    "title": "producto de prueba 2",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "abc456",
+    "stock": 25
+  },
+  {
+    "id": 3,
+    "title": "producto de prueba 3",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "abc789",
+    "stock": 25
+  },
+  {
+    "id": 4,
+    "title": "producto de prueba 4",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "def123",
+    "stock": 25
+  },
+  {
+    "id": 5,
+    "title": "producto de prueba 5",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "def456",
+    "stock": 25
+  },
+  {
+    "id": 6,
+    "title": "producto de prueba 6",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "def789",
+    "stock": 25
+  },
+  {
+    "id": 7,
+    "title": "producto de prueba 7",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "ghi123",
+    "stock": 25
+  },
+  {
+    "id": 8,
+    "title": "producto de prueba 8",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "ghi456",
+    "stock": 25
+  },
+  {
+    "id": 9,
+    "title": "producto de prueba 9",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "ghi789",
+    "stock": 25
+  },
+  {
+    "id": 10,
+    "title": "producto de prueba 10",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "jkl123",
+    "stock": 25
+  },
+  {
+    "id": 11,
+    "title": "producto de prueba 10",
+    "description": "Este es un producto prueba",
+    "price": 200,
+    "thumbnail": "Sin imagen",
+    "code": "jkl456",
+    "stock": 25
+  }
+]
