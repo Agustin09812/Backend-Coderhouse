@@ -1,4 +1,4 @@
-const fs = require('fs/promises')
+const fs = require('fs')
 
 class ProductManager {
     constructor(path) {
@@ -16,7 +16,7 @@ class ProductManager {
     async loadProductsFromFile() {
         try {
             // Intentamos leer el contenido del archivo y cargarlo en la propiedad 'products'
-            const data = await fs.readFile(this.path, 'utf8')
+            const data = await fs.promises.readFile(this.path, 'utf8')
             this.products = JSON.parse(data)
             this.updateAutoIncrementId()
         } catch (error) {
@@ -30,13 +30,6 @@ class ProductManager {
     async updateAutoIncrementId() {
         const maxId = this.products.reduce((max, product) => (product.id > max ? product.id : max), 0)
         this.autoIncrementId = maxId + 1
-    }
-
-    async saveProductsToFile() {
-        console.log("Guardando productos en el archivo...")
-        const data = JSON.stringify(this.products, null, 2)
-        await fs.writeFile(this.path, data, 'utf8')
-        console.log("Productos guardados con éxito.")
     }
 
     async addProduct(product) {
@@ -58,7 +51,7 @@ class ProductManager {
         }
 
         this.products.push(newProduct)
-        this.saveProductsToFile()
+        await fs.promises.writeFile(this.path, JSON.stringify(this.products, null, 2), 'utf8')
         console.log("Producto agregado:", newProduct)
 
         return newProduct
@@ -90,7 +83,7 @@ class ProductManager {
             if (newProduct.code) product.code = newProduct.code
             if (newProduct.stock) product.stock = newProduct.stock
 
-            await this.saveProductsToFile()
+            await fs.promises.writeFile(this.path, JSON.stringify(this.products, null, 2), 'utf8')
 
             console.log("Producto actualizado:", product)
         } catch (error) {
@@ -107,7 +100,7 @@ class ProductManager {
         }
         // Eliminamos el producto del array y guardamos los cambios en el archivo
         const deletedProduct = this.products.splice(index, 1)[0]
-        this.saveProductsToFile()
+        await fs.promises.writeFile(this.path, JSON.stringify(this.products, null, 2), 'utf8')
         console.log("Producto eliminado:", deletedProduct)
     }
 }

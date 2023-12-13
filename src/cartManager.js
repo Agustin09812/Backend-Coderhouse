@@ -1,4 +1,4 @@
-const fs = require('fs/promises')
+const fs = require('fs')
 
 class CartManager {
     constructor(path) {
@@ -11,7 +11,7 @@ class CartManager {
 
     async loadCartsFromFile() {
         try {
-            const data = await fs.readFile(this.path, 'utf8')
+            const data = fs.readFileSync(this.path, 'utf8')
             this.carts = JSON.parse(data)
             // Verificamos si lo cargado es un array, si no, inicializamos carts como un array vacío
             if (!Array.isArray(this.carts)) {
@@ -29,13 +29,6 @@ class CartManager {
         this.autoIncrementId = maxId + 1
     }
 
-    async saveCartsToFile() {
-        console.log("Guardando carritos en el archivo...")
-        const data = JSON.stringify(this.carts, null, 2)
-        await fs.writeFile(this.path, data, 'utf8')
-        console.log("Carritos guardados con éxito.")
-    }
-
     async addCart(cart) {
         const newCart = {
             id: this.autoIncrementId++,
@@ -43,12 +36,11 @@ class CartManager {
         }
 
         this.carts.push(newCart)
-        await this.saveCartsToFile()
+        await fs.promises.writeFile(this.path, JSON.stringify(this.carts, null, 2), 'utf8')
         console.log("Carrito creado:", newCart)
 
         return newCart // Devolvemos el nuevo carrito
     }
-
 
     getCartById(id) {
         const cart = this.carts.find(existingCart => existingCart.id === id)
@@ -60,7 +52,7 @@ class CartManager {
         return cart
     }
 
-    async getProductsInCart(cartId) {
+    getProductsInCart(cartId) {
         const cart = this.getCartById(cartId)
         return cart.products
     }
@@ -75,7 +67,7 @@ class CartManager {
             cart.products.push({ id: productId, quantity })
         }
 
-        this.saveCartsToFile()
+        await fs.promises.writeFile(this.path, JSON.stringify(this.carts, null, 2), 'utf8')
         console.log("Producto agregado al carrito:", { cartId, productId, quantity })
     }
 }
