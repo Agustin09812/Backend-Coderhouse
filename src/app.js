@@ -12,7 +12,7 @@ const cartManager = new CartManager('carritos.json')
 app.use(express.json())
 
 app.get('/', (req, res) => {
-  res.send('Servidor Express')
+  res.send('Server Express')
 })
 
 // Rutas para productos
@@ -42,7 +42,7 @@ app.post('/products', async (req, res, next) => {
     const addedProduct = await productManager.addProduct(newProduct)
 
     res.status(201).json({
-      message: `Nuevo producto agregado con id: ${addedProduct.id} dentro de productos.json`
+      message: `New product added with id: ${addedProduct.id} inside: productos.json`
     })
   } catch (error) {
     next(error)
@@ -54,7 +54,7 @@ app.put('/products/:pid', async (req, res) => {
     const productId = parseInt(req.params.pid)
     const product = req.body
     await productManager.updateProduct(productId, product)
-    res.json({ message: "Producto actualizado con éxito" })
+    res.json({ message: "Product updated successfully" })
   } catch (error) {
     console.log('error', err)
   }
@@ -64,7 +64,7 @@ app.delete('/products/:pid', async (req, res, next) => {
   try {
     const productId = parseInt(req.params.pid)
     await productManager.deleteProduct(productId)
-    res.json({ message: "Producto eliminado con éxito" })
+    res.json({ message: "Product deleted successfully" })
   } catch (error) {
     next(error)
   }
@@ -74,7 +74,7 @@ app.delete('/products/:pid', async (req, res, next) => {
 app.post('/carts', async (req, res, next) => {
   try {
     const newCart = await cartManager.addCart(req.body)
-    res.status(201).json({ message: `Carrito con ID ${newCart.id} creado con éxito en el archivo carritos.json` })
+    res.status(201).json({ message: `Cart with ID: ${newCart.id} successfully created in file carritos.json` })
   } catch (error) {
     next(error)
   }
@@ -104,7 +104,7 @@ app.post('/carts/:cid/product/:pid', async (req, res, next) => {
     await cartManager.addProductToCart(cartId, productId, quantity)
 
     // Construir el mensaje con el título del producto
-    const message = `Producto agregado al carrito: ${cartId}, ${product.title}, Cantidad: ${quantity}`
+    const message = `Product added to cart: ${cartId}, ${product.title}, quantity: ${quantity}`
 
     res.json({ message })
   } catch (error) {

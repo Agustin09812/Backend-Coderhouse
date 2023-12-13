@@ -19,7 +19,7 @@ class CartManager {
             }
             this.updateAutoIncrementId()
         } catch (error) {
-            console.error("Error al cargar carritos desde el archivo:", error.message)
+            console.error("Error loading carts from file:", error.message)
             this.carts = []
         }
     }
@@ -37,7 +37,7 @@ class CartManager {
 
         this.carts.push(newCart)
         await fs.promises.writeFile(this.path, JSON.stringify(this.carts, null, 2), 'utf8')
-        console.log("Carrito creado:", newCart)
+        console.log("Cart created:", newCart)
 
         return newCart // Devolvemos el nuevo carrito
     }
@@ -46,7 +46,7 @@ class CartManager {
         const cart = this.carts.find(existingCart => existingCart.id === id)
 
         if (!cart) {
-            throw new Error("Carrito no encontrado")
+            throw new Error("Cart not found")
         }
 
         return cart
@@ -68,7 +68,7 @@ class CartManager {
         }
 
         await fs.promises.writeFile(this.path, JSON.stringify(this.carts, null, 2), 'utf8')
-        console.log("Producto agregado al carrito:", { cartId, productId, quantity })
+        console.log("Product added to cart:", { cartId, productId, quantity })
     }
 }
 

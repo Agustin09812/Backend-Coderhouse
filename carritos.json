@@ -33,48 +33,8 @@
       },
       {
         "id": 18,
-        "quantity": 1
+        "quantity": 2
       }
     ]
-  },
-  {
-    "id": 3,
-    "products": []
-  },
-  {
-    "id": 4,
-    "products": []
-  },
-  {
-    "id": 5,
-    "products": []
-  },
-  {
-    "id": 6,
-    "products": []
-  },
-  {
-    "id": 7,
-    "products": []
-  },
-  {
-    "id": 8,
-    "products": []
-  },
-  {
-    "id": 9,
-    "products": []
-  },
-  {
-    "id": 10,
-    "products": []
-  },
-  {
-    "id": 11,
-    "products": []
-  },
-  {
-    "id": 12,
-    "products": []
   }
 ]

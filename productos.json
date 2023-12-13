@@ -177,5 +177,19 @@
     "description": "Este es un producto prueba",
     "price": 200,
     "stock": 25
+  },
+  {
+    "id": 22,
+    "title": "probando postman",
+    "description": "descripcion postman",
+    "price": 200,
+    "stock": 25
+  },
+  {
+    "id": 23,
+    "title": "probando postman 2",
+    "description": "descripcion postman 2",
+    "price": 200,
+    "stock": 25
   }
 ]
