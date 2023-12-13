@@ -163,26 +163,5 @@
     "description": "Este es un producto prueba",
     "price": 200,
     "stock": 25
-  },
-  {
-    "id": 20,
-    "title": "producto de prueba 10",
-    "description": "Este es un producto prueba",
-    "price": 200,
-    "stock": 25
-  },
-  {
-    "id": 21,
-    "title": "producto de prueba 10",
-    "description": "Este es un producto prueba",
-    "price": 200,
-    "stock": 25
-  },
-  {
-    "id": 22,
-    "title": "producto de prueba 10",
-    "description": "Este es un producto prueba",
-    "price": 200,
-    "stock": 25
   }
 ]

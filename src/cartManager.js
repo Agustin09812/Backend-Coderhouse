@@ -50,7 +50,7 @@ class CartManager {
     }
 
 
-    async getCartById(id) {
+    getCartById(id) {
         const cart = this.carts.find(existingCart => existingCart.id === id)
 
         if (!cart) {
